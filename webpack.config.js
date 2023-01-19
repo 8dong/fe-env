@@ -18,6 +18,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
         test: /\.css$/,
         use: [mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader']
       },
