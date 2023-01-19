@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const mode = process.env.NODE_ENV ?? 'development';
 
@@ -39,6 +40,13 @@ module.exports = {
       `
     }),
     new webpack.EnvironmentPlugin([]),
-    new webpack.DefinePlugin({})
+    new webpack.DefinePlugin({}),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      minify: {
+        removeComments: mode === 'development' ? false : true,
+        collapseWhitespace: mode === 'development' ? false : true
+      }
+    })
   ]
 };
