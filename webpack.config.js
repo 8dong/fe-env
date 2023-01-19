@@ -16,6 +16,18 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(jpeg|jpg|png|svg)$/,
+        type: 'asset',
+        generator: {
+          filename: 'assets/[name][hash][ext]'
+        },
+        parser: {
+          dataUrlCondition: {
+            maxSize: 40 * 1024
+          }
+        }
       }
     ]
   }
