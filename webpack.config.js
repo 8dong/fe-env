@@ -37,6 +37,7 @@ module.exports = {
       banner: `
       Build Date: ${new Date().toLocaleString()}
       `
-    })
+    }),
+    new webpack.EnvironmentPlugin([])
   ]
 };
