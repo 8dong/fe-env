@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 const mode = process.env.NODE_ENV ?? 'development';
 
@@ -30,5 +31,12 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.BannerPlugin({
+      banner: `
+      Build Date: ${new Date().toLocaleString()}
+      `
+    })
+  ]
 };
