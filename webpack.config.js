@@ -38,6 +38,7 @@ module.exports = {
       Build Date: ${new Date().toLocaleString()}
       `
     }),
-    new webpack.EnvironmentPlugin([])
+    new webpack.EnvironmentPlugin([]),
+    new webpack.DefinePlugin({})
   ]
 };
