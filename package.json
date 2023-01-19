@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production webpack --progress",
-    "lint": "eslint --cache --fix src/"
+    "lint": "eslint --cache --fix src/",
+    "postinstall": "npx husky install"
   },
   "keywords": [],
   "author": "",
